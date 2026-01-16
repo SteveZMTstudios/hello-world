@@ -1,0 +1,211 @@
+{
+  "version": "1.0",
+  "description": "Test workspace for virtual file system testing",
+  "created_date": "2026-01-16",
+  "test_categories": [
+    {
+      "category": "Deep Nesting",
+      "description": "Tests deep directory nesting handling",
+      "paths": [
+        "level1/level2/level3/level4/level5/"
+      ],
+      "test_scenarios": [
+        "Recursive copy of deep directories",
+        "Rename operations on deep paths",
+        "Path length limit testing"
+      ]
+    },
+    {
+      "category": "Special Characters",
+      "description": "Tests special character and internationalization handling",
+      "paths": [
+        "special chars/folder with spaces/",
+        "special chars/folder-with-dashes/",
+        "special chars/文件夹中文名/",
+        "special chars/フォルダ日本語/",
+        "special chars/папка-кириллица/"
+      ],
+      "test_scenarios": [
+        "Filename with spaces",
+        "Unicode characters (Chinese, Japanese, Cyrillic)",
+        "Special symbols (dots, dashes, underscores)",
+        "Trailing spaces in filenames"
+      ]
+    },
+    {
+      "category": "Similar Names",
+      "description": "Tests rename operation precision",
+      "paths": [
+        "similar_names/folder_test/",
+        "similar_names/folder_test_backup/",
+        "similar_names/test_folder/"
+      ],
+      "test_scenarios": [
+        "Avoid filename conflicts during rename",
+        "Distinguish similar filenames",
+        "Batch rename operations"
+      ]
+    },
+    {
+      "category": "Duplicate Content",
+      "description": "Tests copy operation correctness",
+      "paths": [
+        "duplicates/file1.txt",
+        "duplicates/file2.txt",
+        "duplicates/file3.txt"
+      ],
+      "test_scenarios": [
+        "Deduplication detection",
+        "Copy operation integrity verification",
+        "Content comparison functionality"
+      ]
+    },
+    {
+      "category": "Branch Structure",
+      "description": "Tests parallel directory structure handling",
+      "paths": [
+        "branch_A/sub_A1/sub_A1a/",
+        "branch_A/sub_A2/sub_A2a/",
+        "branch_B/sub_B1/sub_B1a/",
+        "branch_B/sub_B2/sub_B2a/"
+      ],
+      "test_scenarios": [
+        "Batch copy of multiple branches",
+        "Directory tree merge operations",
+        "Parallel operation performance testing"
+      ]
+    },
+    {
+      "category": "Empty Files and Folders",
+      "description": "Tests empty file and directory handling",
+      "paths": [
+        "empty_folders/empty1/",
+        "empty_folders/empty2/",
+        "level1/empty_file.txt"
+      ],
+      "test_scenarios": [
+        "Copy and move empty files",
+        "Create and delete empty directories",
+        "Empty content detection"
+      ]
+    },
+    {
+      "category": "Hidden Files",
+      "description": "Tests hidden file and folder handling",
+      "paths": [
+        ".hidden_folder/",
+        ".hidden_file"
+      ],
+      "test_scenarios": [
+        "Hidden file visibility control",
+        "Copy and move hidden files",
+        "System file filtering"
+      ]
+    },
+    {
+      "category": "Symbolic Links",
+      "description": "Tests symbolic link handling",
+      "paths": [
+        "symlinks/original.txt",
+        "symlinks/link_to_original.txt",
+        "symlinks/link_to_parent.txt"
+      ],
+      "test_scenarios": [
+        "Symbolic link recognition",
+        "Link copy vs target file copy",
+        "Broken link handling",
+        "Relative and absolute path links"
+      ]
+    },
+    {
+      "category": "Case Sensitivity",
+      "description": "Tests filesystem case sensitivity",
+      "paths": [
+        "case_test/readme.txt",
+        "case_test/README.txt",
+        "case_test/ReadMe.txt"
+      ],
+      "test_scenarios": [
+        "Same name files with different cases",
+        "Case handling during rename",
+        "Cross-platform compatibility"
+      ]
+    },
+    {
+      "category": "Long Filenames",
+      "description": "Tests long filename handling",
+      "paths": [
+        "long_names/"
+      ],
+      "test_scenarios": [
+        "Filename length limits",
+        "Path length limits",
+        "Truncation handling"
+      ]
+    },
+    {
+      "category": "Various File Types",
+      "description": "Tests different file type handling",
+      "files": [
+        {
+          "path": "level1/simple.txt",
+          "type": "text",
+          "size": "small",
+          "description": "Simple plain text file"
+        },
+        {
+          "path": "level1/script.sh",
+          "type": "executable",
+          "size": "small",
+          "description": "Shell script file"
+        },
+        {
+          "path": "level1/data.json",
+          "type": "json",
+          "size": "small",
+          "description": "JSON data file"
+        },
+        {
+          "path": "level1/data.xml",
+          "type": "xml",
+          "size": "small",
+          "description": "XML data file"
+        },
+        {
+          "path": "level1/binary_test.bin",
+          "type": "binary",
+          "size": "small",
+          "description": "Binary data with special bytes"
+        },
+        {
+          "path": "level1/large_file.txt",
+          "type": "text",
+          "size": "large",
+          "description": "Large text file with 1000 lines"
+        }
+      ],
+      "test_scenarios": [
+        "Text file handling",
+        "Binary file handling",
+        "Large file transfer and copy",
+        "File type recognition"
+      ]
+    }
+  ],
+  "statistics": {
+    "estimated_files": 50,
+    "estimated_directories": 35,
+    "deepest_nesting_level": 5,
+    "languages_tested": ["English", "Chinese", "Japanese", "Cyrillic"]
+  },
+  "compatibility": {
+    "unix_linux": "Full support",
+    "macos": "Full support",
+    "windows": "Partial support (symlinks may not work, case-insensitive)",
+    "notes": [
+      "Symbolic links require appropriate permissions on Windows",
+      "Some special characters may be forbidden on certain filesystems",
+      "Path length limits vary by operating system"
+    ]
+  }
+}
