@@ -75,7 +75,7 @@ echo "Hidden content" > ".hidden_file"
 echo "Hidden in folder" > ".hidden_folder/.hidden_nested"
 
 # Files with different extensions
-echo "#!/bin/bash\necho 'test'" > "level1/script.sh"
+printf "#!/bin/bash\necho 'test'\n" > "level1/script.sh"
 echo '{"key": "value"}' > "level1/data.json"
 echo '<?xml version="1.0"?><root></root>' > "level1/data.xml"
 echo 'key=value' > "level1/config.ini"
