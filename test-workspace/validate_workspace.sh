@@ -123,8 +123,8 @@ fi
 # Test 10: Check binary file
 echo "Testing binary file..."
 if [ -f "level1/binary_test.bin" ]; then
-    SIZE=$(stat -f%z "level1/binary_test.bin" 2>/dev/null || stat -c%s "level1/binary_test.bin" 2>/dev/null)
-    if [ "$SIZE" -gt 0 ]; then
+    # Use test -s for portability (checks if file size > 0)
+    if [ -s "level1/binary_test.bin" ]; then
         report_test "Binary File" "PASS" "Binary file exists and has content"
     else
         report_test "Binary File" "FAIL" "Binary file is empty"
