@@ -1,7 +1,6 @@
 #!/bin/bash
 # Validation script for test workspace
-
-set -e
+# Note: Not using 'set -e' because we want to continue testing even if individual tests fail
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
